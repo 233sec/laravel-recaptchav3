@@ -1,8 +1,8 @@
 {
-    "name": "josiasmontag/laravel-recaptchav3",
+    "name": "233sec/laravel-recaptchav3",
     "description": "Recaptcha V3 for Laravel package",
     "keywords": ["captcha", "recaptcha", "laravel", "php"],
-    "homepage": "https://github.com/josiasmontag/laravel-recaptchav3",
+    "homepage": "https://github.com/233sec/laravel-recaptchav3",
     "license": "MIT",
     "authors": [
         {
