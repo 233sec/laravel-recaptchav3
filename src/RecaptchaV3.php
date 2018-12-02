@@ -98,7 +98,7 @@ class RecaptchaV3
      */
     public function initJs()
     {
-        return '<script src="' . config('recaptchav3.origin') . '/recaptcha/api.js?render=' . $this->sitekey . '"></script>';
+        return '<script src="' . config('recaptchav3.origin') . '/recaptcha/api.js?onload=initField&render=' . $this->sitekey . '"></script>';
     }
 
 
@@ -110,14 +110,14 @@ class RecaptchaV3
         $fieldId = uniqid($name . '-', false);
         $html = '<input type="hidden" name="' . $name . '" id="' . $fieldId . '">';
         $html .= "<script>
-  grecaptcha.ready(function() {
-      grecaptcha.execute('" . $this->sitekey . "', {action: '" . $action . "'}).then(function(token) {
-         document.getElementById('" . $fieldId . "').value = token;
-      });
-  });
-  </script>";
+        window.initField = function (){
+            grecaptcha.ready(function() {
+                grecaptcha.execute('" . $this->sitekey . "', {action: '" . $action . "'}).then(function(token) {
+                    document.getElementById('" . $fieldId . "').value = token;
+                });
+            });
+        };
+        </script>";
         return $html;
     }
-
-
 }
