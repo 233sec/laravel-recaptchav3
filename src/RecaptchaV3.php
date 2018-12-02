@@ -115,7 +115,7 @@ class RecaptchaV3
             grecaptcha.ready(function() {
                 grecaptcha.execute('" . $this->sitekey . "', {action: '" . $action . "'}).then(function(token) {
                     document.getElementById('" . $fieldId . "').value = token;
-                    ' . $callback . '(token);
+                    " . $callback . "(token);
                 });
             });
         };
