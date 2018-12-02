@@ -105,15 +105,17 @@ class RecaptchaV3
     /**
      * @param $action
      */
-    public function field($action, $name = 'g-recaptcha-response')
+    public function field($action, $name = 'g-recaptcha-response', $callback = 'callback_empty')
     {
         $fieldId = uniqid($name . '-', false);
         $html = '<input type="hidden" name="' . $name . '" id="' . $fieldId . '">';
         $html .= "<script>
+        window.callback_empty = function (token){}
         window.initField = function (){
             grecaptcha.ready(function() {
                 grecaptcha.execute('" . $this->sitekey . "', {action: '" . $action . "'}).then(function(token) {
                     document.getElementById('" . $fieldId . "').value = token;
+                    ' . $callback . '(token);
                 });
             });
         };
