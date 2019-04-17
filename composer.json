@@ -11,10 +11,10 @@
         }
     ],
     "require": {
-        "php" : ">=7.1.0",
-        "illuminate/container": ">=5.7.0",
-        "illuminate/support": ">=5.7.0",
-        "illuminate/http": ">=5.7.0",
+        "php" : ">=7.0.0",
+        "illuminate/container": ">=5.5.0",
+        "illuminate/support": ">=5.5.0",
+        "illuminate/http": ">=5.5.0",
         "guzzlehttp/guzzle": ">=6.2"
     },
     "require-dev": {
