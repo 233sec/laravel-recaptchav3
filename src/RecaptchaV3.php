@@ -98,7 +98,7 @@ class RecaptchaV3
      */
     public function initJs()
     {
-        return '<script src="' . config('recaptchav3.origin') . '/recaptcha/api.js?onload=initField&render=' . $this->sitekey . '"></script>';
+        return '<script src="' . config('recaptchav3.origin', 'https://www.google.com') . '/recaptcha/api.js?onload=initField&render=' . $this->sitekey . '"></script>';
     }
 
 
